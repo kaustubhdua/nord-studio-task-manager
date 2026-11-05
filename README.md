@@ -8,6 +8,9 @@ A compact, browser-based task manager built with vanilla HTML, CSS, and JavaScri
 - Filter tasks by all, active, or completed
 - Track remaining tasks
 - Clear completed tasks
+- Delete individual tasks
+- Tasks persist in the browser's `localStorage`; a storage failure shows an error instead of failing silently
+- Accessible controls: labelled inputs, `aria-pressed` filters and toggles, a live region for the list
 - Minimal interface with no framework or build step
 
 ## Run locally
@@ -26,14 +29,22 @@ Open `http://localhost:8000`.
 - `style.css` — layout and visual styling
 - `app.js` — task creation, filtering, and list interactions
 
+## Tests
+
+```bash
+node --test tests/*.test.mjs
+```
+
 ## Notes
 
-This is a front-end project. Unless persistence is implemented in `app.js`, tasks may not survive a page refresh. Avoid entering sensitive information into the task list.
+Tasks are stored only in your browser on this device. Avoid entering sensitive information into the task list.
 
 ## Future improvements
 
-- Persist tasks with versioned local storage
-- Add edit, delete, and undo actions
+- Edit existing tasks and undo deletes
 - Add due dates and sorting
-- Improve keyboard and screen-reader support
-- Add tests for filtering and task-state transitions
+- Behavioural browser tests for filtering and task-state transitions
+
+## Licence
+
+Copyright (c) 2026 Kaustubh Dua. All rights reserved. See `LICENSE`.
